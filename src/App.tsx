@@ -5,6 +5,9 @@ import {observer} from "mobx-react-lite";
 import {IUser} from "./models/IUser";
 import UserService from "./services/UserService";
 import Main from "./components/Main";
+import {Container, Typography} from "@mui/material";
+import Header from "./components/Header";
+
 
 const App: FC = () => {
     const {store} = useContext(Context);
@@ -29,7 +32,7 @@ const App: FC = () => {
         return <div>Загрузка...</div>
     }
 
-    if (!store.isAuth) {
+    if (store.isAuth) {
         return (
             <div>
                 <LoginForm/>
@@ -40,16 +43,21 @@ const App: FC = () => {
 
     return (
         <div>
-            <h1>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : 'АВТОРИЗУЙТЕСЬ'}</h1>
-            <h1>{store.user.isActivated ? 'Аккаунт подтвержден по почте' : 'ПОДТВЕРДИТЕ АККАУНТ!!!!'}</h1>
-            <button onClick={() => store.logout()}>Выйти</button>
-            <div>
-                <button onClick={getUsers}>Получить пользователей</button>
-            </div>
-            {users.map(user =>
-                <div key={user.email}>{user.email}</div>
-            )}
-            <Main/>
+            {/*<h1>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : 'АВТОРИЗУЙТЕСЬ'}</h1>*/}
+            {/*<h1>{store.user.isActivated ? 'Аккаунт подтвержден по почте' : 'ПОДТВЕРДИТЕ АККАУНТ!!!!'}</h1>*/}
+            {/*<button onClick={() => store.logout()}>Выйти</button>*/}
+            {/*<div>*/}
+            {/*    <button onClick={getUsers}>Получить пользователей</button>*/}
+            {/*</div>*/}
+            {/*{users.map(user =>*/}
+            {/*    <div key={user.email}>{user.email}</div>*/}
+            {/*)}*/}
+            <Header/>
+            <Container maxWidth="lg" sx={{ margin: '0, auto' }}>
+                <Main/>
+            </Container>
+
+
         </div>
     );
 };
