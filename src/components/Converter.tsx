@@ -48,7 +48,7 @@ const Converter = () => {
 
     return (
         <>
-        <Box sx={{display: "flex", marginBottom: '15px'}}>
+        <Box sx={{display: "flex", marginBottom: '15px', marginTop: '30px'}}>
             <TextField
                 label="From"
                 type="number"
@@ -102,7 +102,6 @@ const Converter = () => {
                         ))}
                     </Select>
                 </FormControl>
-
             </Box>
 
         </>

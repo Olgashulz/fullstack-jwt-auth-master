@@ -32,12 +32,6 @@ function TabPanel(props: TabPanelProps) {
     );
 }
 
-// function a11yProps(index: number) {
-//     return {
-//         id: `simple-tab-${index}`,
-//         'aria-controls': `simple-tabpanel-${index}`,
-//     };
-// }
 
 export default function LeftPart() {
     const [value, setValue] = React.useState(0);

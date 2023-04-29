@@ -1,9 +1,7 @@
+import { Box } from '@mui/material';
 import React, {useContext, useState} from 'react';
-import {Context} from "../index";
-import Converter from "./Converter";
-import HistoricalData from "./HistoricalData";
-import {Box, Button} from "@mui/material";
 import LeftPart from "./leftPart";
+import RightPart from "./RightPart";
 
 const Main = () => {
     const [isConvert, setIsConvert] = useState(true);
@@ -39,12 +37,10 @@ const Main = () => {
     //     </div>
     // );
     return(
-        // <Box>
-        //     <Button>Currency converter</Button>
-        //     <Button>Currency converter</Button>
-        //     {isConvert ? <Converter/> : <HistoricalData/>}
-        // </Box>
+        <Box sx={{display:"flex", justifyContent: "space-between"}}>
         <LeftPart/>
+        <RightPart/>
+        </Box>
     )
 };
 
